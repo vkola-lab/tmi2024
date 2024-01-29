@@ -204,8 +204,7 @@ if not os.path.isdir(args.results_dir):
     os.mkdir(args.results_dir)
 
 ### Appends to the results_dir path: 1) which splits were used for training (e.g. - 5foldcv), and then 2) the parameter code and 3) experiment code
-#args.results_dir = os.path.join(args.results_dir, args.which_splits, args.param_code + '_' + args.task, str(args.exp_code) + '_s{}'.format(args.seed))
-args.results_dir = os.path.join(args.results_dir, args.run_name+'_Dec23_SNN')
+args.results_dir = os.path.join(args.results_dir, args.run_name)
 
 if not os.path.isdir(args.results_dir):
     os.makedirs(args.results_dir)
