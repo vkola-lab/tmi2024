@@ -114,7 +114,7 @@ def main(args):
 ### Training settings
 parser = argparse.ArgumentParser(description='Configurations for Survival Analysis on TCGA Data.')
 ### Checkpoint + Misc. Pathing Parameters
-parser.add_argument('--data_root_dir', type=str, default='/data1/yi/datasets/', help='data directory') # ../datasets/
+parser.add_argument('--data_root_dir', type=str, default='../data/', help='data directory') # ../datasets/
 parser.add_argument('--feats', type=str, default='cl', help='feature extractor (default: cl-contrastive learning)')
 parser.add_argument('--seed',            type=int, default=1, help='Random seed for reproducible experiment (default: 1)')
 parser.add_argument('--k',               type=int, default=5, help='Number of folds (default: 5)')
@@ -135,7 +135,7 @@ parser.add_argument('--input_dim',       type=int, default=512, help=' ')
 
 ### Model Parameters.
 parser.add_argument('--model_type',      type=str, choices=['graphmixer'], default='graphmixer', help='Type of model (Default: graphmixer)')
-parser.add_argument('--mode',            type=str, choices=['path', 'cluster', 'graph'], default='graph', help='Specifies which modalities to use / collate function in dataloader.')
+parser.add_argument('--mode',            type=str, choices=['graph'], default='graph', help='Specifies which modalities to use / collate function in dataloader.')
 parser.add_argument('--num_gcn_layers',  type=int, default=4, help = '# of GCN layers to use.')
 parser.add_argument('--edge_agg',        type=str, default='spatial', help="What edge relationship to use for aggregation.")
 parser.add_argument('--resample',        type=float, default=0.00, help='Dropping out random patches.')
