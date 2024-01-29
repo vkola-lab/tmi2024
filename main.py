@@ -44,15 +44,15 @@ def main(args):
         if args.dataset == 'tcga':
             if args.cancer_type == 'luad':
                 csv_name = 'TCGA_LUAD_logcpm_ExprMat_T_final.csv'
-                if args.feats == 'resnet18':
-                    feats = 'TCGA-LUAD-DX-256_graphs_resnet18'
+                if args.feats == 'cl':
+                    feats = 'TCGA-LUAD-DX-256_graphs'
                 else:
                     raise NotImplementedError
 
             if args.cancer_type == 'lscc':
                 csv_name = 'TCGA_LUSC_logcpm_ExprMat_T_final.csv'  
-                if args.feats == 'resnet18':
-                    feats = 'TCGA-LSCC-DX-256_graphs_resnet18'
+                if args.feats == 'cl':
+                    feats = 'TCGA-LSCC-DX-256_graphs'
                 else:
                     raise NotImplementedError
 
@@ -115,7 +115,7 @@ def main(args):
 parser = argparse.ArgumentParser(description='Configurations for Survival Analysis on TCGA Data.')
 ### Checkpoint + Misc. Pathing Parameters
 parser.add_argument('--data_root_dir', type=str, default='/data1/yi/datasets/', help='data directory') # ../datasets/
-parser.add_argument('--feats', type=str, default='resnet18', help='feature extractor')
+parser.add_argument('--feats', type=str, default='cl', help='feature extractor (default: cl-contrastive learning)')
 parser.add_argument('--seed',            type=int, default=1, help='Random seed for reproducible experiment (default: 1)')
 parser.add_argument('--k',               type=int, default=5, help='Number of folds (default: 5)')
 parser.add_argument('--k_start',         type=int, default=-1, help='Start fold (Default: -1, last fold)')
