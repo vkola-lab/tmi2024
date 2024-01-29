@@ -146,7 +146,7 @@ parser.add_argument('--opt',             type=str, choices = ['adam', 'sgd'], de
 parser.add_argument('--batch_size',      type=int, default=1, help='Batch Size (Default: 1, due to varying bag sizes)')
 parser.add_argument('--n_classes',       type=int, default=4, help='Number of Classes')
 parser.add_argument('--gc',              type=int, default=32, help='Gradient Accumulation Step.')
-parser.add_argument('--max_epochs',      type=int, default=20, help='Maximum number of epochs to train (default: 20)') # default:30     #10-LSCC
+parser.add_argument('--max_epochs',      type=int, default=20, help='Maximum number of epochs to train (default: 20)')
 parser.add_argument('--lr',              type=float, default=1e-4, help='Learning rate (default: 0.0001)')      # 0.7~ 1e-3
 parser.add_argument('--bag_loss',        type=str, choices=['svm', 'ce', 'ce_surv', 'nll_surv', 'cox_surv'], default='nll_surv', help='slide-level classification loss function (default: ce)')
 parser.add_argument('--label_frac',      type=float, default=1.0, help='fraction of training labels (default: 1.0)')
