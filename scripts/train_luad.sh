@@ -1,0 +1,13 @@
+CUDA_VISIBLE_DEVICES=0 python main.py \
+--which_splits 5foldcv \
+--split_dir tcga_luad_survival \
+--mode graph \
+--model_type graphmixer \
+--task survival \
+--dataset tcga \
+--cancer_type luad \
+--use_omic \
+--signature celltype \
+--bag_loss nll_surv \
+--n_classes 4 \
+--overwrite
